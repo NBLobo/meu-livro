@@ -1,0 +1,21 @@
+{%extends 'livro/base.html'%}
+{%block conteudo%}
+{%load widget_tweaks%}
+<div class='container'>
+    <form action="" method="POST">
+        <h1 style='text-align:center;'>Meu Livro</h1>
+        {%csrf_token%}
+        <div class='form-row align-items-center'>
+            <label>Titilo</label>
+            {%render_field formulario.titulo class='form-control'%}
+            <label>Lido</label>
+            {%render_field formulario.status class='form-control form-check-input'%}
+            <label>Data</label>
+            {%render_field formulario.data class='form-control'%}
+            <label>Resenha</label>
+            {%render_field formulario.resenha class='form-control'%}
+        </div>
+        <button class='btn btn-success' type="submit">Salvar</button>
+    </form>
+</div>
+{%endblock%}

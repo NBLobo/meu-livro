@@ -1,0 +1,27 @@
+{%extends 'livro/base.html'%}
+{%block conteudo%}
+{%load widget_tweaks%}
+<h1 style='text-align:center;'>Detalhe do Livro</h1>
+<div class='container'>
+    <table class='table table-hover table-bordered'>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Finalizado</th>
+            <th style='text-align:center;'>Resenha</th>
+            <th>Data</th>
+        </tr>
+        <tr>
+            <td style='text-align:center;vertical-align: middle;'>{{dados.id}}</td>
+            <td style='text-align:center;vertical-align: middle;'>{{dados.titulo}}</td>
+            {%if dados.status%}
+            <td style='text-align:center;vertical-align: middle;'><input disabled type='checkbox' checked></td>
+            {%else%}
+            <td style='text-align:center;vertical-align: middle;'><input disbled type='checkbox'></td>
+            {%endif%}
+            <td style='text-align:justify;vertical-align: middle;'>{{dados.resenha}}</td>
+            <td style='text-align:center;vertical-align: middle;'>{{dados.data.year}}</td>
+        </tr>
+    </table>
+</div>
+{%endblock%}
